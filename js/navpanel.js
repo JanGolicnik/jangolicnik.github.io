@@ -3,7 +3,7 @@ class NavPanel extends HTMLElement {
     const main = this.getAttribute("main");
     this.innerHTML = `
       <div id='nav-panel' class="${main ? "main" : "notmain"}">
-        <h1 class="title"><a href="/">Hello, I'm Jan<a></h1>
+        <h1 class="title"><a href="/hello/">Hello, I'm Jan<a></h1>
 
         <section class="section">
             <ul class="socials">
@@ -32,7 +32,7 @@ class NavPanel extends HTMLElement {
         </section>
 
         <section class="section hideifnotmain">
-          <a href="/work.html">Work and education</a>
+          <a href="work.html">Work and education</a>
         </section>
 
         <section class="section hideifnotmain">

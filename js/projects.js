@@ -105,7 +105,7 @@ function render_projects_ul() {
       let tags = get_projects_tags(p);
       return `
         <li>
-          <span class="projects-ul-span"><a href="/projects.html#${p.id}">${p.name}</a> ${tags}</span>
+          <span class="projects-ul-span"><a href="projects.html#${p.id}">${p.name}</a> ${tags}</span>
         </li>`;
     })
     .join("");
@@ -116,7 +116,7 @@ function render_favorites() {
     .filter((p) => p.favorite)
     .map((p) => {
       return `
-        <li> <a href="/projects.html#${p.id}">${p.name}</a> </li>`;
+        <li> <a href="projects.html#${p.id}">${p.name}</a> </li>`;
     })
     .join("");
 }
