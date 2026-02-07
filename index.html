@@ -1,10 +1,45 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hello</title>
-  </head>
-  <body>
-    It works.
-  </body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Hello !</title>
+        <meta name="description" content="Personal site" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script type="module" src="./js/navpanel.js"></script>
+        <script type="module" src="./js/projects.js" defer></script>
+    </head>
+    <body>
+        <nav-panel main="true"></nav-panel>
+        <main>
+            <h1>About me</h1>
+            <p>
+                I am a <span id="age"></span>-year old game engine developer
+                from Ljubljana, Slovenia.
+            </p>
+            <p>
+                Most of my work is based on simulation and rendering, though I'm
+                interested in many other topics. I especially enjoy rendering or
+                experimenting in my language of choice. This site serves as a
+                collection of my projects and professional work, mostly as a
+                reference for myself.
+            </p>
+            <p>
+                If you are interested in anything I do, you can always contact
+                me on <a href="https://discord.com/users/gjany">Discord</a>!
+            </p>
+            <p>Check out my favorite projects:</p>
+            <ul id="favorites"></ul>
+        </main>
+        <script>
+            const bd = new Date(2004, 9, 18);
+            const today = new Date();
+            let age = today.getFullYear() - bd.getFullYear();
+            const hasbd =
+                today.getMonth() > bd.getMonth() ||
+                (today.getMonth() === bd.getMonth() &&
+                    today.getDate() >= bd.getDate());
+            document.getElementById("age").textContent = hasbd ? age : age - 1;
+        </script>
+    </body>
 </html>
