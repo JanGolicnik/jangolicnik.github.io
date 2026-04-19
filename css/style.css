@@ -1,10 +1,10 @@
 :root {
-    --bg: #21211f;
-    --navbarbg: #1d1c19;
-    --text: #fff0d1;
-    --link: #947026;
-    --muted: #666666;
-    --border: #e5e5e5;
+    --bg: #1a1916;
+    --navbarbg: #15140f;
+    --text: #d4c9b0;
+    --link: #a08a5e;
+    --muted: #6b6356;
+    --border: #2e2a23;
     --navpanelw: 100%;
     --mainw: 100%;
 }
@@ -18,7 +18,6 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: var(--bg);
     color: var(--text);
     display: flex;
     flex-direction: column;
@@ -31,6 +30,10 @@ body {
         Arial,
         "Apple Color Emoji",
         "Segoe UI Emoji";
+}
+
+html {
+    background: var(--bg);
 }
 
 #nav-panel {
@@ -69,9 +72,14 @@ main {
     width: var(--mainw);
     padding-top: 3m;
     padding-right: 0em;
-    padding-bottom: 20em;
     padding-left: 1em;
-    background-color: var(--bg2);
+    height: fit-content;
+}
+
+#plant-bg {
+    z-index: -1;
+    min-height: 800px;
+    margin-top: -80%;
 }
 
 article {
@@ -144,6 +152,16 @@ ul#favorites {
     main {
         margin-left: var(--navpanelw);
         padding-left: 6em;
-        padding-bottom: 100em;
+    }
+
+    #plant-bg {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 800px;
+        height: 800px;
+        margin-top: 0;
+        pointer-events: none;
     }
 }

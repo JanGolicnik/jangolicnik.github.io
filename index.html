@@ -31,6 +31,8 @@
             <p>Check out my favorite projects:</p>
             <ul id="favorites"></ul>
         </main>
+
+        <div id="plant-bg" style=""></div>
         <script>
             const bd = new Date(2004, 9, 18);
             const today = new Date();
@@ -40,6 +42,11 @@
                 (today.getMonth() === bd.getMonth() &&
                     today.getDate() >= bd.getDate());
             document.getElementById("age").textContent = hasbd ? age : age - 1;
+        </script>
+
+        <script src="plant.js"></script>
+        <script>
+            initPlant("plant-bg");
         </script>
     </body>
 </html>
