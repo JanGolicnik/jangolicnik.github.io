@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Projects</title>
+        <title>Hello !</title>
+        <meta name="description" content="Personal site" />
         <link rel="stylesheet" href="./css/style.css" />
         <script type="module" src="./js/navpanel.js"></script>
         <script type="module" src="./js/projects.js" defer></script>
@@ -11,10 +12,12 @@
     <body>
         <nav-panel></nav-panel>
         <main>
-            <h1>Projects</h1>
-            <div id="projects"></div>
+            <content id="content">
+                <h1>Projects</h1>
+                <div id="projects"></div>
+            </content>
+            <div id="plant-bg"></div>
         </main>
-        <div id="plant-bg" style=""></div>
         <script src="plant.js"></script>
         <script>
             initPlant("plant-bg");

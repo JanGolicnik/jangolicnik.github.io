@@ -12,24 +12,27 @@
     <body>
         <nav-panel main="true"></nav-panel>
         <main>
-            <h1>About me</h1>
-            <p>
-                I am a <span id="age"></span>-year old game engine developer
-                from Ljubljana, Slovenia.
-            </p>
-            <p>
-                Most of my work is based on simulation and rendering, though I'm
-                interested in many other topics. I especially enjoy graphics
-                programming or messing around in any given language. This site
-                serves as a collection of my projects and professional work,
-                mostly as a reference for myself.
-            </p>
-            <p>
-                I also run <a href="https://blogsoni.duckdns.org">blogsoni</a> !
-            </p>
+            <content id="content">
+                <h1>About me</h1>
+                <p>
+                    I am a <span id="age"></span>-year old game engine developer
+                    from Ljubljana, Slovenia.
+                </p>
+                <p>
+                    Most of my work is based on simulation and rendering, though
+                    I'm interested in many other topics. I especially enjoy
+                    graphics programming or messing around in any given
+                    language. This site serves as a collection of my projects
+                    and professional work, mostly as a reference for myself.
+                </p>
+                <p>
+                    I also run
+                    <a href="https://blogsoni.duckdns.org">blogsoni</a> !
+                </p>
+            </content>
+            <div id="plant-bg"></div>
         </main>
 
-        <div id="plant-bg" style=""></div>
         <script>
             const bd = new Date(2004, 9, 18);
             const today = new Date();

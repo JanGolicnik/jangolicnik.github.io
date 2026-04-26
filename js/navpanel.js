@@ -3,13 +3,13 @@ class NavPanel extends HTMLElement {
     const main = this.getAttribute("main");
     this.innerHTML = `
       <div id='nav-panel' class="${main ? "main" : "notmain"}">
-        <h1 class="title"><a href="/hello/">Hello, I'm Jan<a></h1>
+        <h1 class="title"><a href="/hello/">Hello, I'm Jan</a></h1>
 
         <section>
             <ul class="socials">
               <li>
                 <a href="mailto:jan@nejka.net" aria-label="Email">
-                  <img src="https://cdn.simpleicons.org/maildotru/666666" alt="" width="18" height="18" />
+                  <img src="https://cdn.simpleicons.org/maildotru/666666" alt="" width="18" height="18" ></img>
                 </a>
               </li>
 
@@ -27,7 +27,7 @@ class NavPanel extends HTMLElement {
           </ul>
         </section>
 
-        <section>
+        <section class="hideifnotmain">
             <p>I'm a game engine dev, interested in graphics!</p>
         </section>
 
@@ -44,7 +44,7 @@ class NavPanel extends HTMLElement {
         <section class="bottom hideifnotmain">
           2026 Jan Goličnik
         </section>
-      <div>
+      </div>
     `;
   }
 }
