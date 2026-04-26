@@ -5,7 +5,7 @@ class NavPanel extends HTMLElement {
       <div id='nav-panel' class="${main ? "main" : "notmain"}">
         <h1 class="title"><a href="/hello/">Hello, I'm Jan<a></h1>
 
-        <section class="section">
+        <section>
             <ul class="socials">
               <li>
                 <a href="mailto:jan@nejka.net" aria-label="Email">
@@ -27,21 +27,21 @@ class NavPanel extends HTMLElement {
           </ul>
         </section>
 
-        <section class="section">
-            <p>I'm primarily a game engine dev, interested in graphics.</p>
+        <section>
+            <p>I'm a game engine dev, interested in graphics!</p>
         </section>
 
-        <section class="section hideifnotmain">
+        <section class="hideifnotmain">
           <a href="work.html">Work and education</a>
         </section>
 
-        <section class="section hideifnotmain">
-            <p>These are some of my projects:</p>
+        <section class="hideifnotmain">
+            <p>Check out the stuff i do:</p>
             <ul id="projects-ul">
             </ul>
         </section>
 
-        <section class="section bottom hideifnotmain">
+        <section class="bottom hideifnotmain">
           2026 Jan Goličnik
         </section>
       <div>
