@@ -5,7 +5,7 @@ const path = require("path");
 
 const SRC_DIR = "src";
 const COMPONENTS_DIR = "src/components";
-const OUT_DIR = "build";
+const OUT_DIR = "docs";
 const TAG_RE = /<c-([a-z0-9_-]+)([^>]*?)(?:\s*\/>|>([\s\S]*?)<\/c-\1>)/g;
 
 const escapeHtml = (s) =>
