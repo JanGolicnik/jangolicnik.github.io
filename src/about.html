@@ -1,41 +1,43 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Work</title>
-        <link rel="stylesheet" href="./css/style.css" />
-        <script type="module" src="./js/navpanel.js"></script>
-        <script type="module" src="./js/projects.js" defer></script>
-    </head>
+    <c-head></c-head>
     <body>
-        <nav-panel></nav-panel>
+        <c-nav></c-nav>
         <main>
-            <content id="content">
-                <h1>Work and education</h1>
-                <p>I am experience in !</p>
-                <article id="Guardiaris">
-                    <h2>
-                        Guardiaris - Game Engine Developer (October 2023 -
-                        present)
-                    </h2>
-                    <ul>
-                        <li>I did a thing</li>
-                    </ul>
+            <section>
+                <h1>languages</h1>
+                <article class="indent">
+                    <p>favorites are c, c++ and javascript,</p>
+                    <p>but i also use c#, rust and python often</p>
+                    <p>i build my own tooling</p>
                 </article>
 
-                <article id="Uni">
-                    <h2>
-                        Faculty of Computer and Information science Ljubljana
-                        (October 2024 - present)
-                    </h2>
+                <h1>work</h1>
+                <article class="indent">
+                    <p>
+                        game engine developer at guardiaris (october 2023 -
+                        present):
+                    </p>
+                    <div class="indent">
+                        <p>graphics</p>
+                        <p>gameplay</p>
+                        <p>video streaming</p>
+                        <p>embedded systems</p>
+                        <p>ai behaviour</p>
+                        <p>interop</p>
+                        <p>internal tooling</p>
+                    </div>
                 </article>
-            </content>
-            <div id="plant-bg"></div>
+
+                <h1>education</h1>
+                <article class="indent">
+                    <p>
+                        studying at faculty of computer and information science
+                        ljubljana (october 2024 - present)
+                    </p>
+                </article>
+            </section>
+            <c-plant></c-plant>
         </main>
-        <script src="plant.js"></script>
-        <script>
-            initPlant("plant-bg");
-        </script>
     </body>
 </html>

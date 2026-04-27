@@ -1,42 +1,32 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Hello !</title>
-        <meta name="description" content="Personal site" />
-        <link rel="stylesheet" href="./css/style.css" />
-        <script type="module" src="./js/navpanel.js"></script>
-        <script type="module" src="./js/projects.js" defer></script>
-    </head>
+    <c-head></c-head>
     <body>
-        <nav-panel></nav-panel>
+        <c-nav></c-nav>
         <main>
-            <content id="content">
-                <h1>Projects</h1>
-                <article class="indent">
-                    {{= 
-                        projects.map(p => {
-                            const tagsArray = typeof p.tags === "string" ? [p.tags] : Array.isArray(p.tags) ? p.tags : [];
-                            let tags = tagsArray.length
-                                ? `<ul class="tags">${tagsArray.map((t) => `<li class="muted">${t}</li>`).join("")}</ul>`
-                                : "";
-                                
-                            return `
-                                <article id="${p.id}" class="card">
-                                <h2>
-                                    ${p.name}
-                                    <span class="meta">(<a href="${p.repo}">repository</a>)</span>
-                                </h2>
-                                <p class="indent">${p.description}</p>
-                                ${tags}
-                                </article>
-                            `;
-                        }).join("\n")
-                    }}
+            <section class="bottom-pad">
+                <article>
+                    {{= projects.map(p => { const tagsArray = typeof p.tags ===
+                    "string" ? [p.tags] : Array.isArray(p.tags) ? p.tags : [];
+                    let tags = tagsArray.length ? `${tagsArray.map((t) => `
+                    <p class="muted">${t}</p>
+                    `).join("")}` : ""; return `
+                    <article id="${p.id}" class="card">
+                        <div class="tags">
+                            <p>
+                                ${p.name}
+                                <span class="meta"
+                                    >(<a href="${p.repo}">repo</a>)</span
+                                >
+                            </p>
+                            ${tags}
+                        </div>
+                        <p class="indent">${p.description}</p>
+                    </article>
+                    `; }).join("\n") }}
                 </article>
-            </content>
-            <div id="plant-bg"></div>
+            </section>
+            <c-plant></c-plant>
         </main>
     </body>
 </html>

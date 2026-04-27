@@ -4,7 +4,9 @@ const fs = require("fs");
 const path = require("path");
 
 const SRC_DIR = "src";
+const COMPONENTS_DIR = "src/components";
 const OUT_DIR = "build";
+const TAG_RE = /<c-([a-z0-9_-]+)([^>]*?)(?:\s*\/>|>([\s\S]*?)<\/c-\1>)/g;
 
 const escapeHtml = (s) =>
   String(s).replace(
@@ -21,6 +23,18 @@ function compile(keys, expr) {
   } catch (e) {
     return new Function(...keys, `"use strict"; ${expr}`);
   }
+}
+
+function replace_components(html, components, depth = 0) {
+  if (depth > 16) throw new Error("component recursion too deep");
+  return html.replace(TAG_RE, (_, name, attrStr, children = "") => {
+    const tpl = components[name];
+    if (tpl == null) {
+      console.error(`  unknown component <c-${name}>`);
+      return "";
+    }
+    return replace_components(tpl, components, depth + 1);
+  });
 }
 
 function render(tpl, ctx) {
@@ -53,16 +67,33 @@ function load_ctx() {
   return ctx;
 }
 
+function load_components() {
+  const out = {};
+  if (!fs.existsSync(COMPONENTS_DIR)) return out;
+  for (const f of walk_dir(COMPONENTS_DIR)) {
+    if (!f.endsWith(".html")) continue;
+    const name = path.basename(f, ".html");
+    out[name] = fs.readFileSync(f, "utf8");
+  }
+  return out;
+}
+
 function build() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const ctx = load_ctx();
+  const components = load_components();
   for (const f of walk_dir(SRC_DIR)) {
+    if (f.startsWith(COMPONENTS_DIR)) continue;
     const dst = path.join(OUT_DIR, path.relative(SRC_DIR, f));
 
     fs.mkdirSync(path.dirname(dst), { recursive: true });
 
     if (f.endsWith(".html")) {
-      fs.writeFileSync(dst, render(fs.readFileSync(f, "utf8"), ctx));
+      ctx.page = path.parse(f).name;
+      fs.writeFileSync(
+        dst,
+        render(replace_components(fs.readFileSync(f, "utf8"), components), ctx),
+      );
       continue;
     }
 
