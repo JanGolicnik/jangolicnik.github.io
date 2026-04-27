@@ -11,12 +11,16 @@
                     <p>
                         i am a game engine developer from ljubljana, slovenia.
                         <span
-                            >{{ const bd = new Date(2004, 9, 18); const t = new
-                            Date(); let age = t.getFullYear() -
-                            bd.getFullYear(); const had = t.getMonth() >
-                            bd.getMonth() || (t.getMonth() === bd.getMonth() &&
-                            t.getDate() >= bd.getDate()); return had ? age : age
-                            - 1; }}</span
+                            ><script &>
+                                const bd = new Date(2004, 9, 18);
+                                const t = new Date();
+                                let age = t.getFullYear() - bd.getFullYear();
+                                const had =
+                                    t.getMonth() > bd.getMonth() ||
+                                    (t.getMonth() === bd.getMonth() &&
+                                        t.getDate() >= bd.getDate());
+                                return had ? age : age - 1;
+                            </script></span
                         >
                         years old.
                     </p>
@@ -40,9 +44,15 @@
 
                 <h2>stuff</h2>
                 <article class="indent">
-                    {{= projects.map(p => `
-                    <a href="${p.repo}">/ ${p.name}</a><br />
-                    `).join("\n") }}
+                    <script &&>
+                        return projects
+                            .map(
+                                (p) => `
+                                    <a href="${p.repo}">/ ${p.name}</a><br />
+                                    `,
+                            )
+                            .join("\n");
+                    </script>
                 </article>
             </section>
 
