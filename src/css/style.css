@@ -1,0 +1,109 @@
+:root {
+    --bg: #1a1916;
+    --text: #d4c9b0;
+    --link: #a08a5e;
+    --link-hover: #c9ad75;
+    --muted: #6b6356;
+    --border: #2e2a23;
+    --mono: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
+}
+
+* {
+    box-sizing: border-box;
+    font: 16px/1.6 var(--mono);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+.indent {
+    padding-left: 5em;
+}
+
+header.site {
+    padding: 2.5em 2em 1em;
+    max-width: 900px;
+}
+header.site h1 {
+    margin: 0 0 0.4em;
+    letter-spacing: 0.01em;
+}
+header.site h1 a {
+    color: var(--text);
+}
+
+nav.top {
+    word-spacing: 0.15em;
+}
+nav.top a {
+    margin-right: 0.5em;
+    white-space: nowrap;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    padding: 1em 2em 8em;
+}
+
+article {
+    margin-bottom: 2.5em;
+}
+
+main h2 {
+    margin: 0 0 0.5em;
+    color: var(--text);
+}
+
+main p {
+    margin: 0.75em 0;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+#plant-bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 45vw;
+    height: 70vh;
+    max-width: 700px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+ul.tags {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 700px) {
+    header.site {
+        padding: 1.5em 1.25em 0.75em;
+    }
+    main {
+        padding: 0.75em 1.25em 6em;
+    }
+    #plant-bg {
+        width: 100vw;
+        height: 35vh;
+    }
+}

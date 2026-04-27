@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>soni</title>
+        <meta name="description" content="site" />
+        <meta name="author" content="soni" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="plant.js" defer></script>
+    </head>
+    <body>
+        <header class="site">
+            <nav class="top">
+                <a href="/">/about</a>
+                <a href="./projects.html">/projects</a>
+                <a href="https://blogsoni.duckdns.org">blogsoni</a>
+                <a href="https://github.com/yourhandle">github</a>
+                <a href="mailto:you@example.com">email</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1>hello</h1>
+            <article class="indent">
+                <p>
+                    i am a game engine developer from ljubljana, slovenia.
+                    <span
+                        >{{ const bd = new Date(2004, 9, 18); const t = new
+                        Date(); let age = t.getFullYear() - bd.getFullYear();
+                        const had = t.getMonth() > bd.getMonth() ||
+                        (t.getMonth() === bd.getMonth() && t.getDate() >=
+                        bd.getDate()); return had ? age : age - 1; }}</span
+                    >
+                    years old.
+                </p>
+                <p>
+                    most of my work is simulation and rendering. graphics
+                    programming, low-level systems, messing around in any given
+                    language. this site is a collection of projects and a
+                    reference for myself.
+                </p>
+                <p>working at guardiaris and studying at FRI ljubljana.</p>
+                <p>
+                    check out
+                    <a href="https://blogsoni.duckdns.org">blogsoni</a>.
+                </p>
+            </article>
+
+            <h2>stuff</h2>
+            <article class="indent">
+                {{= projects.map(p => `
+                <a href="${p.repo}">/ ${p.name}</a><br />
+                `).join("\n") }}
+            </article>
+        </main>
+
+        <div id="plant-bg" aria-hidden="true"></div>
+    </body>
+</html>
