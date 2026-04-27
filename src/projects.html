@@ -4,7 +4,7 @@
     <body>
         <c-nav></c-nav>
         <main>
-            <section class="bottom-pad">
+            <section role="content" class="bottom-pad">
                 <article>
                     {{= projects.map(p => { const tagsArray = typeof p.tags ===
                     "string" ? [p.tags] : Array.isArray(p.tags) ? p.tags : [];
